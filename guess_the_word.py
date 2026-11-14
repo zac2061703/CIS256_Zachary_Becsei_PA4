@@ -19,6 +19,7 @@ def select_word():
     """Select and return a random word from the word list."""
     return random.choice(WORDS)
 
+
 def process_guess(word, guessed_letters, guess):
     """Process a letter guessed by the player."""
     guessed_letters.add(guess)
@@ -27,6 +28,7 @@ def process_guess(word, guessed_letters, guess):
         return True
 
     return False
+
 
 def display_word(word, guessed_letters):
     """Display guessed letters and hide unguessed letters."""
@@ -40,9 +42,11 @@ def display_word(word, guessed_letters):
 
     return " ".join(displayed_letters)
 
+
 def is_word_guessed(word, guessed_letters):
     """Check whether every letter in the word has been guessed."""
     return all(letter in guessed_letters for letter in word)
+
 
 def get_valid_guess(guessed_letters):
     """Ask the player for a valid letter that has not been guessed."""
@@ -55,6 +59,7 @@ def get_valid_guess(guessed_letters):
             print("You already guessed that letter.")
         else:
             return guess
+
 
 def play_game():
     """Run the word guessing game."""
@@ -94,6 +99,7 @@ def play_game():
         print(f"Congratulations! You guessed the word '{word}'.")
     else:
         print(f"You ran out of attempts. The word was '{word}'.")
+        
 
 if __name__ == "__main__":
     play_game()

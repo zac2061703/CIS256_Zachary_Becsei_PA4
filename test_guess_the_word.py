@@ -10,21 +10,13 @@ from guess_the_word import (
     select_word,
 )
 
+
 def test_selected_word_is_from_word_list():
     """Verify that the selected word comes from the predefined list."""
     selected_word = select_word()
 
     assert selected_word in WORDS
 
-def test_correct_guess():
-    """Verify that a correct guess is processed properly."""
-    word = "python"
-    guessed_letters = set()
-
-    result = process_guess(word, guessed_letters, "p")
-
-    assert result is True
-    assert "p" in guessed_letters
 
 def test_correct_guess():
     """Verify that a correct guess is processed properly."""
@@ -35,6 +27,7 @@ def test_correct_guess():
 
     assert result is True
     assert "p" in guessed_letters
+
 
 def test_incorrect_guess():
     """Verify that an incorrect guess is processed properly."""
@@ -45,6 +38,7 @@ def test_incorrect_guess():
 
     assert result is False
     assert "z" in guessed_letters
+
 
 def test_display_word_reveals_correct_letters():
     """Verify that correctly guessed letters are displayed."""
